@@ -2,66 +2,23 @@
 
 We will quickly get acquainted with the common commands that you need to know to use Docker. These commands are as follows:
 
-Docker run: To create a container from an image.
-
-```
-docker run nginx
-```
-
-Docker ps: Gives a list of all running containers
-
-```
-docker ps --all
-```
-
-Docker stop: This command is used to stop a running container.
-
-```
-docker stop container_id
-```
-
-Docker images: Lists all available images.
-
-```
-docker images
-```
-
-Docker rm: This command is used to remove a Docker container.
-
-```
-docker rm container_id
-```
-
-Docker pull: This command is used to download a Docker image from a registry.
-
-```
-docker pull nginx
-```
-
-Docker network ls: This command is used to know the details of the list of networks in the cluster.
-
-```
-docker network ls
-```
-
-Docker logs: This command is used to check the logs of all the docker containers.
-
-```
-docker logs container_id
-```
-
-Docker exec: This command is used to execute a command in a running container.
-
-```
-docker exec -it container_id bash
-```
-
-Docker compose: This command is used to manage multi-container Docker applications. You define the configuration of your application's services, networks, and volumes in a file called `docker-compose.yml`, and then use the docker-compose command to start and stop your application.
-
-```
-docker-compose up
-```
-
-```
-docker-compose down
-```
+- **Command**: `docker run nginx`
+  - **Details**: Creates and starts a container from the `nginx` image, running the Nginx web server. If the image isn’t present locally, it pulls it from a registry (e.g., Docker Hub).
+- **Command**: `docker ps --all`
+  - **Details**: Lists all containers on the system, including those that are stopped, not just the running ones. Without `--all`, it only shows running containers.
+- **Command**: `docker stop container_id`
+  - **Details**: Stops a running container specified by its `container_id`. Replace `container_id` with the actual ID of the container (e.g., obtained from `docker ps`).
+- **Command**: `docker rm`
+  - **Details**: Note: This command as listed is incomplete in the text (missing an argument). Typically, it should be `docker rm container_id` to remove a stopped container by its ID. Here, it’s assumed to indicate the general purpose of removing a container.
+- **Command**: `docker pull nginx`
+  - **Details**: Downloads the `nginx` image from a registry (e.g., Docker Hub) to the local system without running it.
+- **Command**: `docker network ls`
+  - **Details**: Lists all networks available in the Docker environment, showing network names, drivers, and scopes.
+- **Command**: `docker logs container_id`
+  - **Details**: Displays the logs of a container specified by its `container_id`. Replace `container_id` with the actual ID to see output or errors from the container.
+- **Command**: `docker exec -it container_id`
+  - **Details**: Executes a command (e.g., a shell) inside a running container specified by `container_id` in interactive (`-i`) and terminal (`-t`) mode. Replace `container_id` with the actual ID. Note: The specific command to execute isn’t provided in the text (e.g., typically `docker exec -it container_id bash`).
+- **Command**: `docker-compose up`
+  - **Details**: Starts all services defined in a `docker-compose.yml` file, creating and running containers, networks, and volumes as specified.
+- **Command**: `docker-compose down`
+  - **Details**: Stops and removes all containers, networks, and volumes created by `docker-compose up` based on the `docker-compose.yml` file.
